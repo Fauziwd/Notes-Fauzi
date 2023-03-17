@@ -27,17 +27,83 @@ body {
     background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
-button {
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-}
+        /* ---- Button Delete ----- */
+        button.button {
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            background: red;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+            background: #e62222;
+           }
+           
+           button, button span {
+            transition: 200ms;
+           }
+           
+           button .text {
+            transform: translateX(35px);
+            color: white;
+            font-weight: bold;
+           }
+           
+           button .icon {
+            position: absolute;
+            border-left: 1px solid #c41b1b;
+            transform: translateX(110px);
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           }
+           
+           button svg {
+            width: 15px;
+            fill: #eee;
+           }
+           
+           button:hover {
+            background: #ff3636;
+           }
+           
+           button:hover .text {
+            color: transparent;
+           }
+           
+           button:hover .icon {
+            width: 150px;
+            border-left: none;
+            transform: translateX(0);
+           }
+           
+           button:focus {
+            outline: none;
+           }
+           
+           button:active .icon svg {
+            transform: scale(0.8);
+           }
+
+        /* ------ End Button Delete ------ */
 
 a {
-    background-color: #dadde6;
-    color: #347213;
+    background-color: rgba(38, 77, 21, 0.5); /* warna latar belakang dengan opacity 50% */
+    border-radius: 10px; /* membuat elemen berbentuk bulat dengan radius 10px */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* memberikan efek bayangan pada elemen */
+    backdrop-filter: blur(10px); /* memberikan efek blur pada latar belakang elemen */
+    color: #ebf1e8;
     padding: 10px 10px 10px 10px;
-    border-radius: 5px;
+    border-radius: 3.5px;
     font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+span.text {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -128,12 +194,14 @@ a {
     backdrop-filter: blur(10px); /* memberikan efek blur pada latar belakang elemen */
 }
 
-
+    /* ---------- DropDown Area ---------- */
 .dropdown {
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    border: 1px solid #ffffff;
-    background: white;
+    background-color: rgba(255, 255, 255, 0.5); /* warna latar belakang dengan opacity 50% */
+    border-radius: 10px; /* membuat elemen berbentuk bulat dengan radius 10px */
+    box-shadow: 0px 0px 10px rgba(42, 132, 14, 0.3); /* memberikan efek bayangan pada elemen */
+    backdrop-filter: blur(10px); /* memberikan efek blur pada latar belakang elemen */
     font-size: 1.4rem;
     font-weight: 300;
     height: 3rem;
@@ -141,8 +209,10 @@ a {
     margin-left: 25px;
 }
 
-.button {
-    background: linear-gradient(45deg, #9a9cff, #36d1dc);
+     /* --------- End DropDown Area --------- */
+
+.button-create {
+    background: linear-gradient(45deg, #3665dc, #36d1dc);
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -153,17 +223,9 @@ a {
     transition: all 0.3s ease;
 }
 
-.button:hover {
-    opacity: 0.8;
-}
-
-.button--secondary {
-    background: #888888;
-    border-bottom: 2px solid #717171;
-}
-
-.button--secondary:hover {
-    background: #6E6E6E;
+.button-create:hover {
+    opacity: 2;
+    background: linear-gradient(45deg, #3665dc62, #36d1dc);
 }
 
 /* Note editor */
@@ -171,8 +233,10 @@ a {
 .title-input {
     border: 1px solid #DEDFE0;
     font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.194);
     font-size: 2rem;
     font-weight: 300;
+    border-radius: 5px;
     display: block;
     margin: 2.4rem 0;
     padding: .8rem;
@@ -182,14 +246,25 @@ a {
 .body-input {
     border: 1px solid #DEDFE0;
     font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.194);
     font-family: inherit;
     font-size: 1.6rem;
     font-weight: 300;
+    border-radius: 5px;
     display: block;
     margin: 2.4rem 0;
     min-height: 15rem;
     padding: .8rem;
     width: 100%;
+}
+
+textarea#note-body.body-input, 
+input#note-title.title-input {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(255, 255, 255, 0.21); /* warna latar belakang dengan opacity 50% */
+    border-radius: 10px; /* membuat elemen berbentuk bulat dengan radius 10px */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* memberikan efek bayangan pada elemen */
+    backdrop-filter: blur(9px); /* memberikan efek blur pada latar belakang elemen */
 }
 
 /* Note List Item */
@@ -231,6 +306,7 @@ a {
     margin: 3.2rem 0;
 }
 
-#time-stamp {
+span#time-stamp {
     margin-left: 55%;
+    font-family: 'Montserrat', sans-serif;
 }
