@@ -1,5 +1,6 @@
 /* Base Styles */
 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -115,6 +116,7 @@ a {
 .input {
     border-radius: 4px;
     padding: 10px;
+    width: 150px;
     border: none;
     font-size: 16px;
     margin-right: 10px;
@@ -134,7 +136,8 @@ a {
     font-size: 1.4rem;
     font-weight: 300;
     height: 3rem;
-    margin-left: 175px;
+    width: 120px;
+    margin-left: 50px;
 }
 
 .button {
